@@ -18,14 +18,14 @@ function App() {
       showAlert("Dark Mode Has Been Enabled", "success")
       document.body.style.backgroundColor = "#343a40";
       document.body.style.color = "white";
-      document.title = "TextUtils - Dark Mode"
+      // document.title = "TextUtils - Dark Mode"
     }
     else{
       setMode("light");
       showAlert("Light Mode Has Been Enabled", "success")
       document.body.style.backgroundColor = "white";
       document.body.style.color = "black";
-      document.title = "TexUtils - Light Mode"
+      // document.title = "TexUtils - Light Mode"
     }
   }
   const [alert, setAlert] = useState(null);

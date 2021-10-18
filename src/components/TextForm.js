@@ -34,18 +34,18 @@ export default function TextForm(props) {
             rows="3"
           ></textarea>
         </div>
-        <button className="btn btn-primary mx-2" onClick={handleUpClick}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>
           Convert To Uppercase
         </button>
-        <button className="btn btn-warning mx-2" onClick={handleLowClick}>Convert To Lowercase</button>
-        <button className="btn btn-danger mx-2" onClick={handleClearClick}>Clear</button>
+        <button disabled={text.length===0} className="btn btn-warning mx-2 my-1" onClick={handleLowClick}>Convert To Lowercase</button>
+        <button disabled={text.length===0} className="btn btn-danger mx-2 my-1" onClick={handleClearClick}>Clear</button>
     </div>
     <div className="container my-4">
       <h1>Text Summary</h1>
-      <p><b>{text.split(" ").length}</b> words and <b>{text.length}</b> characters</p>
-      <p><b>{0.008*text.split(" ").length}</b> Minutes To Read</p>
+      <p><b>{text.split(" ").filter((item)=>{return item.length!==0}).length}</b> words and <b>{text.length}</b> characters</p>
+      <p><b>{0.008*text.split(" ").filter((item)=>{return item.length!==0}).length}</b> Minutes To Read</p>
       <h3>Preview</h3>
-      <p>{text}</p>
+      <p>{text.length>0?text:"Nothing To Preview"}</p>
     </div>
     </>
   );
